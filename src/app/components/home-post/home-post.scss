@@ -1,0 +1,18 @@
+@use 'variables' as *;
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__image {
+    width: 800px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+}

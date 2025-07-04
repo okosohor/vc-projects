@@ -1,0 +1,76 @@
+@use 'variables' as *;
+
+mat-sidenav-container {
+  height: 100%;
+}
+
+mat-sidenav {
+  background: #fff;
+  padding: 64px 20px;
+  height: 100%;
+}
+
+.mat-drawer-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+.sidenav {
+  color: $gray-color;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+
+  &__logo {
+    display: block;
+    font-weight: 600;
+    font-size: 2.5rem;
+  }
+
+  &__links-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__link {
+    padding: 4px;
+    font-size: 1.75rem;
+    transition: all 0.5s ease ;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $gray-color;
+    }
+  }
+
+  &__logout-button {
+    display: flex;
+    width: 100%;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease ;
+    padding: 8px;
+    border-bottom: 1px solid transparent;
+
+    &:hover {
+      border-bottom-color: $gray-color;
+    }
+  }
+}
+
+.content {
+  min-height: 100%;
+  background-color: #fff;
+  padding-top: 32px;
+}

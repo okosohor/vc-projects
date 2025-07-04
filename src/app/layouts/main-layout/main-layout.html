@@ -1,0 +1,61 @@
+
+<mat-sidenav-container>
+  <mat-sidenav
+    [opened]="sidenav.opened()"
+    (closedStart)="sidenav.close()"
+   >
+
+   <div class="sidenav">
+     <span class="sidenav__logo">VC gallery</span>
+     <div class="sidenav__links-group">
+       <a (click)="sidenav.close()" routerLink="/" class="sidenav__link">Home</a>
+       <a (click)="sidenav.close()" routerLink="/orders" class="sidenav__link">Orders</a>
+       <a (click)="sidenav.close()" routerLink="/projects" class="sidenav__link">Projects</a>
+      </div>
+      <a (click)="sidenav.close()" routerLink="/login" class="sidenav__logout-button">
+        <span>Logout</span>
+          <svg
+            fill="#000000"
+            height="24px"
+            width="24px"
+            version="1.1"
+            id="Capa_1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 471.2 471.2"
+            xml:space="preserve"
+          >
+            <g
+              id="SVGRepo_bgCarrier"
+              stroke-width="0"
+            >
+            </g>
+            <g
+              id="SVGRepo_tracerCarrier"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+            </g>
+            <g
+              id="SVGRepo_iconCarrier"
+            >
+            <g>
+              <g>
+                <path d="M227.619,444.2h-122.9c-33.4,0-60.5-27.2-60.5-60.5V87.5c0-33.4,27.2-60.5,60.5-60.5h124.9c7.5,0,13.5-6,13.5-13.5 s-6-13.5-13.5-13.5h-124.9c-48.3,0-87.5,39.3-87.5,87.5v296.2c0,48.3,39.3,87.5,87.5,87.5h122.9c7.5,0,13.5-6,13.5-13.5 S235.019,444.2,227.619,444.2z">
+                </path>
+                <path d="M450.019,226.1l-85.8-85.8c-5.3-5.3-13.8-5.3-19.1,0c-5.3,5.3-5.3,13.8,0,19.1l62.8,62.8h-273.9c-7.5,0-13.5,6-13.5,13.5 s6,13.5,13.5,13.5h273.9l-62.8,62.8c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4l85.8-85.8 C455.319,239.9,455.319,231.3,450.019,226.1z">
+                </path>
+              </g>
+            </g>
+          </g>
+      </svg>
+    </a>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header>
+    </app-header>
+      <div class="content">
+        <router-outlet></router-outlet>
+      </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

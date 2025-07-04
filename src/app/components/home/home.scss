@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.home {
+  padding: 64px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    font-size: 4rem;
+    margin: 0;
+    color: $color-primary;
+    margin-bottom: 32px;
+    line-height: 4rem;
+  }
+}

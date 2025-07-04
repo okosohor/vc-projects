@@ -1,0 +1,38 @@
+<!-- <div class="order-card">
+  <h4 class="order-card__title">Order #{{order.number}}</h4>
+  <div class="order-card__goods-list">
+    <div *ngFor="let good of order.goods" class="order-card__good">
+      <span>{{good.title}}</span>
+      <div class="order-card__good-border"></div>
+      <span>${{good.price}}</span>
+    </div>
+  </div>
+  <p class="order-card__total-price">Total: ${{total}}</p>
+</div> -->
+
+
+<div class="order-card">
+  <div class="order-card__content">
+    <h4 class="order-card__title">Order #{{order.number}}</h4>
+      <div class="order-card__info-container">
+        <div class="order-card__details">
+            <span>Order date</span>
+            <span>date</span>
+        </div>
+        <div class="order-card__details">
+            <span>Items</span>
+            <span>{{order.goods.length}}</span>
+        </div>
+        <div class="order-card__details">
+            <span>Total</span>
+            <span>{{total}}</span>
+        </div>
+        <div class="order-card__details">
+            <span>Est. Delivery</span>
+            <span>{{order.date}}</span>
+        </div>
+      </div>
+    <span>Tracking: {{order.tracking}}</span>
+  </div>
+  <app-custom-button (clicked)="goToOrder(order.id)" text="View details"/>
+</div>

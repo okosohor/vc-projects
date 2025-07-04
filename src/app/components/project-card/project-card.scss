@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.project {
+  width: 800px;
+  height: 250px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 32px;
+  color: $color-primary;
+  justify-content: space-between;
+
+  &__title {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+  }
+}
