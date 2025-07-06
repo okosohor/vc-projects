@@ -1,20 +1,43 @@
 <div class="info">
   <div class="info__container">
     <div class="info__status-block">
-      asd
+      <span class="info__status-icon info__status-icon--box"></span>
+      <div class="info__status-content">
+        <div class="info__status-title">Total Orders</div>
+        <div class="info__status-value">4</div>
+      </div>
     </div>
     <div class="info__status-block">
-      asd
+      <span class="info__status-icon info__status-icon--clock"></span>
+      <div class="info__status-content">
+        <div class="info__status-title">Preparing</div>
+        <div class="info__status-value">1</div>
+      </div>
     </div>
     <div class="info__status-block">
-      asd
+      <span class="info__status-icon info__status-icon--truck"></span>
+      <div class="info__status-content">
+        <div class="info__status-title">In Transit</div>
+        <div class="info__status-value">1</div>
+      </div>
     </div>
     <div class="info__status-block">
-      asd
+      <span class="info__status-icon info__status-icon--check"></span>
+      <div class="info__status-content">
+        <div class="info__status-title">Delivered</div>
+        <div class="info__status-value">2</div>
+      </div>
     </div>
   </div>
   <div class="info__search-block">
-    <app-custom-input/>
-    <select name="" id=""></select>
+    <app-custom-input
+      placeholder="Search by order number or tracking number..."
+    />
+    <select class="info__filter-select">
+      <option>All Orders</option>
+      <option>Preparing</option>
+      <option>In Transit</option>
+      <option>Delivered</option>
+    </select>
   </div>
 </div>

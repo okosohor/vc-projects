@@ -6,7 +6,6 @@ import { POSTS } from '../../../mock-data/posts';
 @Component({
   selector: 'app-home',
   imports: [
-    HomePost,
     CommonModule
   ],
   templateUrl: './home.html',

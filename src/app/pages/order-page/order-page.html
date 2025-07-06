@@ -1,1 +1,117 @@
-<p>order-page works!</p>
+<div class="order container">
+  <div class="order__left-content">
+    <div class="order__header">
+      <app-custom-button text="Back to Orders" (clicked)="backToOrders()" />
+      <div class="order__header-text">
+        <h3>ORD-2024-001</h3>
+        <p>Order placed on 20/01/2024</p>
+      </div>
+    </div>
+    <div class="order__timeline">
+      <h3>Order Timeline</h3>
+      <ul class="timeline-list">
+        <li class="timeline-item completed">
+          <div class="timeline-status"></div>
+          <div>
+            <strong>Order Placed</strong>
+            <p>
+              Your order has been successfully placed and is being processed.
+            </p>
+          </div>
+          <span class="timeline-date">20/01/2024</span>
+        </li>
+        <li class="timeline-item completed">
+          <div class="timeline-status"></div>
+          <div>
+            <strong>Order Confirmed</strong>
+            <p>
+              Your order has been confirmed and is being prepared for shipment.
+            </p>
+          </div>
+          <span class="timeline-date">21/01/2024</span>
+        </li>
+        <li class="timeline-item completed">
+          <div class="timeline-status"></div>
+          <div>
+            <strong>In Transit</strong>
+            <p>Your order has been shipped and is on its way to you.</p>
+          </div>
+          <span class="timeline-date">22/01/2024</span>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-status"></div>
+          <div>
+            <strong>Delivered</strong>
+            <p>Your order will be delivered to your address.</p>
+          </div>
+          <span class="timeline-date">25/01/2024</span>
+        </li>
+      </ul>
+    </div>
+    <div class="order__items">
+      <h3>Order Items</h3>
+      <span class="order__items-count">2 items</span>
+      <div class="order__item">
+        <div class="order__item-img placeholder-img"></div>
+        <div class="order__item-details">
+          <div class="order__item-title">Executive Desk – Walnut</div>
+          <div class="order__item-meta">Quantity: 2</div>
+          <div class="order__item-meta">Unit Price: $1,200</div>
+        </div>
+        <div class="order__item-price">$2,400</div>
+      </div>
+      <div class="order__item">
+        <div class="order__item-img placeholder-img"></div>
+        <div class="order__item-details">
+          <div class="order__item-title">Ergonomic Office Chair</div>
+          <div class="order__item-meta">Quantity: 1</div>
+          <div class="order__item-meta">Unit Price: $450</div>
+        </div>
+        <div class="order__item-price">$450</div>
+      </div>
+    </div>
+  </div>
+  <div class="order__right-content">
+    <div class="order__summary">
+      <h3>Order Summary</h3>
+      <div class="order__summary-row">
+        <span>Subtotal</span>
+        <span>$2,850</span>
+      </div>
+      <div class="order__summary-row">
+        <span>Shipping</span>
+        <span>Free</span>
+      </div>
+      <div class="order__summary-row">
+        <span>Tax</span>
+        <span>$228</span>
+      </div>
+      <div class="order__summary-row order__summary-total">
+        <span>Total</span>
+        <span>$3,078</span>
+      </div>
+    </div>
+    <div class="order__adress">
+      <h3>Shipping Address</h3>
+      <div class="order__address-details">
+        <strong>Alexandra Design Studio</strong><br />
+        123 Design District<br />
+        New York, NY 10001<br />
+        United States
+      </div>
+    </div>
+    <div class="order__delivery-info">
+      <h3>Delivery Info</h3>
+      <div class="order__delivery-row">
+        <span>Estimated Delivery</span>
+        <span>25/01/2024</span>
+      </div>
+      <div class="order__delivery-row">
+        <span>Tracking Number</span>
+        <span class="order__tracking-number">TRK123456789</span>
+      </div>
+    </div>
+    <app-custom-button text="Download Invoice" class="order__download-btn" />
+    <app-custom-button text="Contact Support" class="order__support-btn" />
+  </div>
+</div>

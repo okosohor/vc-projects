@@ -1,5 +1,88 @@
-
-  <div class="home container">
-    <h2 class="home__title">Home</h2>
-    <app-home-post *ngFor="let post of posts" [post]="post" />
+<div class="home container">
+  <div class="home__welcome-row">
+    <div>
+      <h2 class="home__welcome">Welcome back, Alexandra Design Studio</h2>
+      <div class="home__subtitle">
+        Manage your interior design projects and orders from your dashboard
+      </div>
+    </div>
+    <button class="home__new-project-btn">+ New Project</button>
   </div>
+
+  <div class="home__main-cards">
+    <div class="home__main-card">
+      <span class="home__main-card-icon home__main-card-icon--folder"></span>
+      <div class="home__main-card-status">3 Active</div>
+      <div class="home__main-card-title">Projects</div>
+      <div class="home__main-card-desc">
+        Manage your design projects and client wishlists
+      </div>
+    </div>
+    <div class="home__main-card">
+      <span class="home__main-card-icon home__main-card-icon--box"></span>
+      <div class="home__main-card-status">2 In Transit</div>
+      <div class="home__main-card-title">Orders</div>
+      <div class="home__main-card-desc">
+        Track your orders and delivery status
+      </div>
+    </div>
+    <div class="home__main-card">
+      <span class="home__main-card-icon home__main-card-icon--profile"></span>
+      <div class="home__main-card-status">Complete</div>
+      <div class="home__main-card-title">Profile</div>
+      <div class="home__main-card-desc">
+        Update your account and company information
+      </div>
+    </div>
+    <div class="home__main-card">
+      <span class="home__main-card-icon home__main-card-icon--support"></span>
+      <div class="home__main-card-status">Available</div>
+      <div class="home__main-card-title">Support</div>
+      <div class="home__main-card-desc">
+        Get help with your account or orders
+      </div>
+    </div>
+  </div>
+
+  <div class="home__stats-row">
+    <div class="home__stat-card">
+      <span class="home__stat-icon home__stat-icon--folder"></span>
+      <div class="home__stat-title">Active Projects</div>
+      <div class="home__stat-value">3</div>
+    </div>
+    <div class="home__stat-card">
+      <span class="home__stat-icon home__stat-icon--box"></span>
+      <div class="home__stat-title">Orders This Month</div>
+      <div class="home__stat-value">7</div>
+    </div>
+    <div class="home__stat-card">
+      <span class="home__stat-icon home__stat-icon--spend"></span>
+      <div class="home__stat-title">Total Spend</div>
+      <div class="home__stat-value">$24,500</div>
+    </div>
+  </div>
+
+  <div class="home__activity">
+    <div class="home__activity-title">Recent Activity</div>
+    <div class="home__activity-subtitle">
+      Your latest project and order updates
+    </div>
+    <ul class="home__activity-list">
+      <li class="home__activity-item">
+        Project 'Modern Office' updated
+        <span class="home__activity-time">2 hours ago</span>
+      </li>
+      <li class="home__activity-item">
+        Order #12345 shipped <span class="home__activity-time">1 day ago</span>
+      </li>
+      <li class="home__activity-item">
+        New project 'Luxury Apartment' created
+        <span class="home__activity-time">3 days ago</span>
+      </li>
+      <li class="home__activity-item">
+        Order #12344 delivered
+        <span class="home__activity-time">1 week ago</span>
+      </li>
+    </ul>
+  </div>
+</div>

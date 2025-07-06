@@ -1,7 +1,62 @@
 <div class="project">
-  <h4 class="project__title">{{project.title}}</h4>
-  <div class="project__content">
-    <span>{{project.itemsCount}} items</span>
-    <span>${{project.price}}</span>
+  <div class="project__header-row">
+    <div>
+      <h4 class="project__title">{{project.title}}</h4>
+      <div class="project__desc">{{project.description}}</div>
+      <div class="project__meta-extra">
+        <span class="project__client">Client: {{project.client}}</span>
+        <span class="project__status">{{getStatusLabel(project.status)}}</span>
+        <span class="project__favorite" *ngIf="project.isFavorite">★</span>
+      </div>
+      <div class="project__tags">
+        <span *ngFor="let tag of project.tags" class="project__tag"
+          >{{tag}}</span
+        >
+      </div>
+    </div>
+    <div class="project__actions">
+      <button class="project__action-btn" title="Share">
+        <span>🔗</span>
+      </button>
+      <button class="project__action-btn" title="Download">
+        <span>⬇️</span>
+      </button>
+      <button
+        class="project__action-btn project__action-btn--danger"
+        title="Delete"
+      >
+        <span>🗑️</span>
+      </button>
+    </div>
+  </div>
+  <div class="project__meta-row">
+    <span class="project__meta">{{project.products.length}} products</span>
+    <span class="project__meta">Total: ${{project.totalPrice}}</span>
+    <span class="project__meta project__meta--right"
+      >Updated {{project.updated}} by {{project.lastEditor}}</span
+    >
+  </div>
+  <div class="project__products">
+    <div *ngFor="let product of project.products" class="project__product-card">
+      <div class="project__product-img placeholder-img"></div>
+      <div class="project__product-info">
+        <div class="project__product-title">{{product.title}}</div>
+        <div class="project__product-price">${{product.price}}</div>
+        <div class="project__product-qty-row">
+          <span class="project__product-qty-label">Qty:</span>
+          <input
+            class="project__product-qty-input"
+            type="number"
+            [value]="product.qty"
+            min="1"
+            readonly
+          />
+          <button class="project__product-remove" title="Remove">
+            <span>🗑️</span>
+          </button>
+        </div>
+        <div class="project__product-comment">{{product.comment}}</div>
+      </div>
+    </div>
   </div>
 </div>
