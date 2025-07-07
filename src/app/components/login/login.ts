@@ -7,35 +7,21 @@ import { CustomInput } from 'src/app/shared/custom-input/custom-input';
 
 @Component({
   selector: 'app-login',
-  imports: [
-    ReactiveFormsModule,
-    CommonModule,
-    CustomButton,
-    CustomInput
-  ],
+  imports: [ReactiveFormsModule, CommonModule, CustomButton, CustomInput],
   templateUrl: './login.html',
-  styleUrl: './login.scss'
+  styleUrl: './login.scss',
 })
 export class Login {
   loginForm;
 
-  constructor(
-    private fb: FormBuilder,
-    private router: Router
-  ) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
 
-
   onSubmit() {
-    if (this.loginForm.valid) {
-      this.router.navigate(['/projects']);
-    } else {
-      this.loginForm.markAllAsTouched();
-    }
+    this.router.navigate(['/projects']);
   }
-
 }

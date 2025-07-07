@@ -1,4 +1,4 @@
-@use 'variables' as *;
+@use "variables" as *;
 
 .login {
   min-height: 100%;
@@ -21,7 +21,6 @@
     font-weight: 400;
   }
 
-
   &__form {
     border: 1px solid $gray-light-color;
     min-width: 400px;
@@ -36,7 +35,6 @@
     box-shadow: $shadow-xl;
   }
 }
-
 
 label {
   display: flex;
