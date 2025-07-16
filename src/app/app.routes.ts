@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import { Home } from './components/home/home';
-import { Login } from './components/login/login';
+import { Login } from './pages/login/login';
 import { MainLayout } from './layouts/main-layout/main-layout';
-import { OrdersList } from './components/orders-list/orders-list';
-import { ProjectList } from './components/project-list/project-list';
+import { OrdersList } from './pages/orders-list/orders-list';
+import { ProjectList } from './pages/project-list/project-list';
 import { OrderPage } from './pages/order-page/order-page';
+import { Profile } from './pages/profile/profile';
+import { Dashboard } from './pages/dashboard/dashboard';
+import {ProjectPage} from './pages/project-page/project-page';
 
 export const routes: Routes = [
   {
@@ -13,7 +15,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        component: Home,
+        component: Dashboard,
       },
       {
         path: 'orders',
@@ -21,11 +23,19 @@ export const routes: Routes = [
       },
       {
         path: 'orders/:id',
-        component: OrderPage
+        component: OrderPage,
       },
       {
         path: 'projects',
         component: ProjectList,
+      },
+      {
+        path: 'projects/:id',
+        component: ProjectPage,
+      },
+      {
+        path: 'profile',
+        component: Profile,
       },
     ],
   },

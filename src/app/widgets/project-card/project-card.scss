@@ -1,0 +1,39 @@
+@use "variables" as *;
+
+
+.project {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 2.5rem;
+  align-items: center;
+  color: #222;
+  border: 1px solid $gray-light-color;
+  border-radius: 16px;
+  box-shadow: $shadow-lg;
+  min-width: 0;
+  gap: 1.25rem;
+  transition: box-shadow 0.2s;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    color: #111;
+  }
+
+  &__desc {
+    color: $gray-color;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+
+}

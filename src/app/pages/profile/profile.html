@@ -1,0 +1,177 @@
+<div class="profile-settings">
+  <h1>Profile Settings</h1>
+  <p class="profile-settings__subtitle">
+    Manage your account settings and preferences
+  </p>
+
+  <div class="profile-settings__main">
+    <!-- Left column -->
+    <div class="profile-settings__left">
+      <!-- Personal Information -->
+      <section class="profile-card">
+        <h2>
+          <span class="icon">👤</span>
+          Personal Information
+        </h2>
+        <p class="section-desc">
+          Update your personal details and contact information
+        </p>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input
+                type="text"
+                placeholder="Full Name"
+                value="Alexandra Design Studio"
+              />
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input
+                type="email"
+                placeholder="Email Address"
+                value="asdasd@gmail.com"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input
+                type="text"
+                placeholder="Company Name"
+                value="Alexandra Design Studio"
+              />
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input
+                type="tel"
+                placeholder="Phone Number"
+                value="(555) 123-4567"
+              />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Address</label>
+            <textarea placeholder="Your full address"></textarea>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" placeholder="City" />
+            </div>
+            <div class="form-group">
+              <label>State</label>
+              <input type="text" placeholder="State" />
+            </div>
+            <div class="form-group">
+              <label>ZIP Code</label>
+              <input type="text" placeholder="ZIP Code" />
+            </div>
+          </div>
+          <button type="button" class="btn btn-black">Update Profile</button>
+        </form>
+      </section>
+
+      <!-- Security Settings -->
+      <section class="profile-card">
+        <h2>
+          <span class="icon">🛡️</span>
+          Security Settings
+        </h2>
+        <p class="section-desc">
+          Update your password and security preferences
+        </p>
+        <form>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Current Password</label>
+              <input type="password" placeholder="Enter current password" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>New Password</label>
+              <input type="password" placeholder="Enter new password" />
+            </div>
+            <div class="form-group">
+              <label>Confirm New Password</label>
+              <input type="password" placeholder="Confirm new password" />
+            </div>
+          </div>
+          <button type="button" class="btn btn-black">Update Password</button>
+        </form>
+      </section>
+    </div>
+
+    <!-- Right column -->
+    <div class="profile-settings__right">
+      <!-- Notifications -->
+      <section class="profile-card">
+        <h2>Notifications</h2>
+        <p class="section-desc">Manage your notification preferences</p>
+        <div class="toggle-row">
+          <span>Order Updates</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Promotions</span>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Newsletter</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="toggle-row">
+          <span>Project Sharing</span>
+          <label class="switch">
+            <input type="checkbox" checked />
+            <span class="slider"></span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Account Status -->
+      <section class="profile-card">
+        <h2>Account Status</h2>
+        <div class="status-row">
+          <span>Account Type</span>
+          <span class="status-value">Professional</span>
+        </div>
+        <div class="status-row">
+          <span>Member Since</span>
+          <span class="status-value">January 2024</span>
+        </div>
+        <div class="status-row">
+          <span>Status</span>
+          <span class="status-value status-active">Active</span>
+        </div>
+      </section>
+
+      <!-- Billing -->
+      <section class="profile-card">
+        <h2>Billing</h2>
+        <div class="status-row">
+          <span>Payment Method</span>
+          <span class="status-value">**** 4242</span>
+        </div>
+        <div class="status-row">
+          <span>Billing Cycle</span>
+          <span class="status-value">Monthly</span>
+        </div>
+        <button type="button" class="btn btn-outline">Manage Billing</button>
+      </section>
+    </div>
+  </div>
+</div>

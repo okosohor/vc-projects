@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { Header } from '../../components/header/header';
+import { Header } from '../../widgets/header/header';
 import { SideNavService } from '../../services/sidenav';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
