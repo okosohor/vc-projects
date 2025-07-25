@@ -1,0 +1,26 @@
+@use "variables" as *;
+
+
+.product {
+  margin: 0 20px;
+  width: 100%;
+  border-top: 1px solid $gray-light-color;
+  border-bottom: 1px solid $gray-light-color;
+  display: flex;
+  padding: 16px 0 16px 0;
+
+  &__title {
+
+  }
+
+  &__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

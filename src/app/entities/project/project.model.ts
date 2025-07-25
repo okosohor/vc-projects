@@ -3,6 +3,7 @@ export interface Project {
   customerId: string;
   name: string;
   description: string;
+  productQuantity: number;
   createdAt: Date;
   updatedAt: Date;
 }

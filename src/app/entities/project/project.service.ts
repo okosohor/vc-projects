@@ -9,7 +9,7 @@ import Pagination from 'src/app/types/pagintaion';
   providedIn: 'root'
 })
 export class ProjectService {
-  private apiUrl = `${environment.baseUrl}/project`;
+  private apiUrl = `${environment.baseUrl}/public/project`;
 
   private http = inject(HttpClient);
 
@@ -24,5 +24,9 @@ export class ProjectService {
 
   getProjectById(id: string): Observable<Project> {
     return this.http.get<Project>(`${this.apiUrl}/${id}`);
+  }
+
+  deleteProject(id: string): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

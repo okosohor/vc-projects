@@ -1,6 +1,12 @@
 <header class="header">
   <div class="header__content">
     <span class="header__logo">VC Gallery</span>
+    <nav class="header__navigation">
+      <a routerLink="/" class="header__link">Dashboard</a>
+      <a routerLink="/orders" class="header__link">Orders</a>
+      <a routerLink="/projects" class="header__link">Projects</a>
+      <a routerLink="/profile" class="header__link">Profile</a>
+    </nav>
     <button (click)="sidenav.open()" class="header__menu-button">
       <svg
         width="24px"

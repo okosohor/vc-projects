@@ -1,4 +1,23 @@
-<div class="project-page">
-  <h1>{{project?.name}}</h1>
-  <p>{{project?.description}}</p>
+<div class="project-page container">
+  <div class="project-page__project">
+    <div class="project-page__header">
+      <div>
+        <h1>Project name: {{project?.name}}</h1>
+        <p>{{project?.description}}</p>
+      </div>
+
+      <!-- TODO: move to separate feature -->
+      <app-custom-button (click)="deleteProject()" text="Delete project" />
+    </div>
+    <div class="project-page__products">
+      @for (product of products; track product.id) {
+      <!-- <li>{{ item.name }}</li> -->
+      <app-project-page-product-item
+        [product]="product"
+        [variationId]="getVariationAndQuantity(product.id)?.variationId"
+        [quantity]="getVariationAndQuantity(product.id)?.quantity"
+      />
+      } @empty { There are no products. }
+    </div>
+  </div>
 </div>

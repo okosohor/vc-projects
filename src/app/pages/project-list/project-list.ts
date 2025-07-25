@@ -10,7 +10,7 @@ import { AddProjectButtonComponent } from 'src/app/features/add-project/add-proj
 
 @Component({
   selector: 'app-project-list',
-  imports: [CommonModule, ProjectCard, CustomButton, AddProjectButtonComponent],
+  imports: [CommonModule, ProjectCard, AddProjectButtonComponent],
   templateUrl: './project-list.html',
   styleUrl: './project-list.scss',
 })

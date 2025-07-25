@@ -1,0 +1,10 @@
+<div class="product">
+  <img  class="product__image" alt={{product.image.alt}} src={{product.image.src}}>
+  <div class="product__info">
+    <h2 class="product__title">{{product.title}}</h2>
+    <p class="product__price">{{getProductVariation()?.price}}$</p>
+    <p class="product__sku">{{getProductVariation()?.sku}}</p>
+    <p class="product__quantity">quantity: {{quantity}}</p>
+    <a href={{getProductUrl()}} target="_blank">Show product</a>
+  </div>
+</div>
