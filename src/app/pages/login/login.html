@@ -6,7 +6,7 @@
       Email:
       <input type="email" formControlName="email" />
     </label> -->
-    <app-custom-input label="Email" placeholder="Enter your email" />
+    <app-custom-input formControlName="email" label="Email" placeholder="Enter your email" />
     <div
       *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
       class="error"
@@ -19,7 +19,7 @@
       <input type="password" formControlName="password" />
     </label> -->
 
-    <app-custom-input label="Password" placeholder="Enter your password" />
+    <app-custom-input formControlName="password" label="Password" placeholder="Enter your password" />
     <div
       *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
       class="error"
@@ -27,6 +27,6 @@
       Password is required (min 6 chars).
     </div>
     <!-- <button type="submit" [disabled]="loginForm.invalid">Login</button> -->
-    <app-custom-button (clicked)="onSubmit()" text="Login" />
+    <app-custom-button type="submit" text="Login" />
   </form>
 </div>

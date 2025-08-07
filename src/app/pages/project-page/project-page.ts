@@ -23,7 +23,7 @@ export class ProjectPage {
   projectId = inject(ActivatedRoute).snapshot.params['id'];
 
   project: Project | undefined = undefined;
-  products: Product[] | undefined = undefined;
+  products: {shopifyProduct: Product, product: LimitProduct}[] | undefined = undefined;
   limitProducts: LimitProduct[] | undefined = undefined;
 
   getVariationAndQuantity(
@@ -41,28 +41,34 @@ export class ProjectPage {
   }
 
   ngOnInit() {
-    this.projectService.getProjectById(this.projectId).subscribe((project) => {
-      this.project = project;
-      console.log(this.project);
-    });
+    this.productService.getProjectViewById(this.projectId).subscribe((projectView) => {
+      // this.projectView = projectView
+      console.log('pro',projectView)
+      this.project = projectView.project
+      this.products = projectView.products
+    })
 
-    this.productService
-      .getProductsByProjectId(this.projectId)
-      .subscribe((res) => {
-        this.limitProducts = res.products;
-        const ids = res.products.map((p) => p.productId.toString());
-        this.productService.getProductsByIds(ids).subscribe((productsRes) => {
-          this.products = productsRes;
-          console.log(this.products);
-        });
-      });
+    // this.projectService.getProjectById(this.projectId).subscribe((project) => {
+    //   this.project = project;
+    //   console.log(this.project);
+    // });
+
+    // this.productService
+    //   .getProductsByProjectId(this.projectId)
+    //   .subscribe((res) => {
+    //     this.limitProducts = res.products;
+    //     const ids = res.products.map((p) => p.productId.toString());
+    //     this.productService.getProductsByIds(ids).subscribe((productsRes) => {
+    //       // this.products = productsRes;
+    //       console.log(this.products);
+    //     });
+    //   });
   }
 
   deleteProject() {
     console.log(this.projectId)
     this.projectService.deleteProject(this.projectId).subscribe({
       next: () => {
-        // Можна додати логіку після видалення, наприклад, навігацію або оновлення списку
         console.log('Project deleted');
       },
       error: (err) => {

@@ -10,12 +10,10 @@
       <app-custom-button (click)="deleteProject()" text="Delete project" />
     </div>
     <div class="project-page__products">
-      @for (product of products; track product.id) {
+      @for (product of products; track product.product.id) {
       <!-- <li>{{ item.name }}</li> -->
       <app-project-page-product-item
         [product]="product"
-        [variationId]="getVariationAndQuantity(product.id)?.variationId"
-        [quantity]="getVariationAndQuantity(product.id)?.quantity"
       />
       } @empty { There are no products. }
     </div>

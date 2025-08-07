@@ -3,11 +3,11 @@
     <div class="order__header">
       <app-custom-button text="Back to Orders" (clicked)="backToOrders()" />
       <div class="order__header-text">
-        <h3>ORD-2024-001</h3>
-        <p>Order placed on 20/01/2024</p>
+        <h3>{{order?.name}}</h3>
+        <p>Order placed on {{order?.processedAt?.split('T')?.[0]}}</p>
       </div>
     </div>
-    <div class="order__timeline">
+    <!-- <div class="order__timeline">
       <h3>Order Timeline</h3>
       <ul class="timeline-list">
         <li class="timeline-item completed">
@@ -47,19 +47,29 @@
           <span class="timeline-date">25/01/2024</span>
         </li>
       </ul>
-    </div>
+    </div> -->
     <div class="order__items">
       <h3>Order Items</h3>
-      <span class="order__items-count">2 items</span>
-      <div class="order__item">
-        <div class="order__item-img placeholder-img"></div>
-        <div class="order__item-details">
-          <div class="order__item-title">Executive Desk – Walnut</div>
-          <div class="order__item-meta">Quantity: 2</div>
-          <div class="order__item-meta">Unit Price: $1,200</div>
+      <span class="order__items-count">{{order?.lineItems?.edges?.length}} items</span>
+
+
+      @for(product of order?.lineItems?.edges ; track product.cursor) {
+        <div class="order__item">
+          <img alt={{product.node.variant.image.altText}} src={{product.node.variant.image.url}} class="order__item-img placeholder-img" />
+          <div class="order__item-details">
+            <div class="order__item-title">{{product.node.variant.title}}</div>
+            <div class="order__item-meta">Quantity: {{product.node.quantity}}</div>
+            <div class="order__item-meta">Unit Price: {{product.node.variant.price.amount + ' ' + product.node.variant.price.currencyCode}}</div>
+          </div>
+          <!-- TODO: DISCOUNT -->
+          <div class="order__item-price">{{product.node.originalTotalPrice.amount + ' ' + product.node.originalTotalPrice.currencyCode}}</div>
         </div>
-        <div class="order__item-price">$2,400</div>
-      </div>
+        }@empty {
+        <h2>No products</h2>
+        }
+
+
+
       <div class="order__item">
         <div class="order__item-img placeholder-img"></div>
         <div class="order__item-details">
@@ -76,31 +86,36 @@
       <h3>Order Summary</h3>
       <div class="order__summary-row">
         <span>Subtotal</span>
-        <span>$2,850</span>
+        <span>{{order?.subtotalPrice?.amount + ' ' + order?.subtotalPrice?.currencyCode}}</span>
       </div>
       <div class="order__summary-row">
         <span>Shipping</span>
-        <span>Free</span>
+        <span>{{order?.totalShippingPrice?.amount + ' ' + order?.totalShippingPrice?.currencyCode}}</span>
       </div>
       <div class="order__summary-row">
         <span>Tax</span>
-        <span>$228</span>
+        <span>{{order?.totalTax?.amount + ' ' + order?.totalTax?.currencyCode}}</span>
       </div>
       <div class="order__summary-row order__summary-total">
         <span>Total</span>
-        <span>$3,078</span>
+        <span>{{order?.totalPrice?.amount + ' ' + order?.totalPrice?.currencyCode}}</span>
       </div>
     </div>
     <div class="order__adress">
       <h3>Shipping Address</h3>
       <div class="order__address-details">
-        <strong>Alexandra Design Studio</strong><br />
-        123 Design District<br />
-        New York, NY 10001<br />
-        United States
+        <strong>{{order?.shippingAddress?.name}}</strong>
+        <br />
+        <span>{{order?.shippingAddress?.address1 + ' ' + order?.shippingAddress?.address2}}</span>
+        <br />
+        {{order?.shippingAddress?.city + ' ' + order?.shippingAddress?.zip}}
+        <br />
+        {{order?.shippingAddress?.country + ' ' + order?.shippingAddress?.province}}
+        <br />
+        {{order?.shippingAddress?.phone}}
       </div>
     </div>
-    <div class="order__delivery-info">
+    <!-- <div class="order__delivery-info">
       <h3>Delivery Info</h3>
       <div class="order__delivery-row">
         <span>Estimated Delivery</span>
@@ -110,8 +125,8 @@
         <span>Tracking Number</span>
         <span class="order__tracking-number">TRK123456789</span>
       </div>
-    </div>
+    </div> -->
     <app-custom-button text="Download Invoice" class="order__download-btn" />
-    <app-custom-button text="Contact Support" class="order__support-btn" />
+    <!-- <app-custom-button text="Contact Support" class="order__support-btn" /> -->
   </div>
 </div>

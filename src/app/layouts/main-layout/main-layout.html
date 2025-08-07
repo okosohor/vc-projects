@@ -13,7 +13,7 @@
        <a (click)="sidenav.close()" routerLink="/projects" class="sidenav__link">Projects</a>
       </div>
       <a (click)="sidenav.close()" routerLink="/login" class="sidenav__logout-button">
-        <span>Logout</span>
+        <span (click)="logout()">Logout</span>
           <svg
             fill="#000000"
             height="24px"

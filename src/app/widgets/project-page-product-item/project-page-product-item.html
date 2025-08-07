@@ -1,10 +1,10 @@
 <div class="product">
-  <img  class="product__image" alt={{product.image.alt}} src={{product.image.src}}>
+  <img  class="product__image" alt={{product.shopifyProduct.image.alt}} src={{image}}>
   <div class="product__info">
-    <h2 class="product__title">{{product.title}}</h2>
+    <h2 class="product__title">{{product.shopifyProduct.title}}</h2>
     <p class="product__price">{{getProductVariation()?.price}}$</p>
     <p class="product__sku">{{getProductVariation()?.sku}}</p>
-    <p class="product__quantity">quantity: {{quantity}}</p>
+    <p class="product__quantity">quantity: {{product.product.quantity}}</p>
     <a href={{getProductUrl()}} target="_blank">Show product</a>
   </div>
 </div>

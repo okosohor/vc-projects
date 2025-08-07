@@ -74,9 +74,43 @@ export interface Product {
   options: ProductOption[];
   variants: ProductVariant[];
   image: ProductImage;
-  images: object[];
+  images: ProductImage[];
   templateSuffix: string;
   metafieldsGlobalTitleTag: string;
   metafieldsGlobalDescriptionTag: string;
   adminGraphqlApiId: string;
 }
+
+export interface ProductForOrder {
+  cursor: string;
+  node: {
+    id: string;
+    title: string;
+    quantity: number;
+    currentQuantity: number;
+    discountedTotalPrice: {
+      amount: string;
+      currencyCode: string;
+    };
+    originalTotalPrice: {
+      amount: string;
+      currencyCode: string;
+    };
+    variant: {
+      id: string;
+      title: string;
+      sku: string;
+      price: {
+        amount: string;
+        currencyCode: string;
+      };
+      image: {
+        id: string;
+        url: string;
+        altText: string;
+        width: number;
+        height: number;
+      };
+    };
+  };
+};

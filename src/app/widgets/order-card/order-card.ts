@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CustomButton } from "../../shared/custom-button/custom-button";
 import { Router } from '@angular/router';
+import { OrderEdge } from 'src/app/entities/order/order.model';
 
 @Component({
   selector: 'app-order-card',
@@ -16,25 +17,16 @@ import { Router } from '@angular/router';
 export class OrderCard {
   constructor(private router: Router) {}
 
+  @Input() order!: OrderEdge;
 
-  @Input() order!: {
-    id:number,
-    date:string,
-    tracking:string,
-    number:number,
-    goods:
-    {
-      id:number,
-      title:string,
-      price:number
-    }[]
-  };
 
-  get total(): number {
-    return this.order.goods.reduce((sum, item) => sum + item.price, 0);
-  }
 
-  goToOrder(id: number) {
-    this.router.navigate(['/orders', id]);
+  // get total(): number {
+    //   return this.order.goods.reduce((sum, item) => sum + item.price, 0);
+    // }
+
+  goToOrder() {
+    const orderId = (this.order.node.id.split('?')[0].split('/').at(-1))
+    this.router.navigate(['/orders', orderId]);
   }
 }

@@ -1,10 +1,12 @@
 <div class="input-group">
-  <label class="input-group__label" for="username">{{ label }}</label>
+  <label class="input-group__label" for="input-id">{{ label }}</label>
   <input
-    [placeholder]="placeholder"
     class="input-group__input"
     type="text"
-    id="username"
-    placeholder="Enter your username"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="handleInput($event)"
+    (blur)="handleBlur()"
+    id="input-id"
   />
 </div>

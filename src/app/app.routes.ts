@@ -7,6 +7,9 @@ import { OrderPage } from './pages/order-page/order-page';
 import { Profile } from './pages/profile/profile';
 import { Dashboard } from './pages/dashboard/dashboard';
 import {ProjectPage} from './pages/project-page/project-page';
+import { AuthGuard } from './guards/auth.guard';
+import { noAuthGuard } from './guards/noAuth.guard';
+import { Register } from './pages/register/register';
 
 export const routes: Routes = [
   {
@@ -15,29 +18,42 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        canActivate: [AuthGuard],
         component: Dashboard,
       },
       {
         path: 'orders',
+        canActivate: [AuthGuard],
         component: OrdersList,
       },
       {
         path: 'orders/:id',
+        canActivate: [AuthGuard],
         component: OrderPage,
       },
       {
         path: 'projects',
+        canActivate: [AuthGuard],
         component: ProjectList,
       },
       {
         path: 'projects/:id',
+        canActivate: [AuthGuard],
         component: ProjectPage,
       },
       {
         path: 'profile',
+        canActivate: [AuthGuard],
         component: Profile,
       },
     ],
   },
-  { path: 'login', component: Login },
+  { path: 'login',
+    canActivate: [noAuthGuard],
+    component: Login
+  },
+  { path: 'register',
+    canActivate: [noAuthGuard],
+    component: Register
+  },
 ];
